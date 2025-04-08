@@ -1,10 +1,12 @@
 from flask import jsonify
 import requests
 
+FVS_API_BASE_URL = ""
 
 def service_call_fvs_api(pid: int, image: str, key: str):
     try:
-        url = f"https://events.controldata.co.th/mock-up/fvs/personal/verify/{pid}"
+
+        url = f"{FVS_API_BASE_URL}/{pid}"
         headers = {
             "API-KEY": key,
             "Content-Type": "application/json",
